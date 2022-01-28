@@ -13,4 +13,6 @@ npm install typescript@4.2.2
 
 - Todo código de typescript é escrito dentro da pasta app, os arquivos na pasta dist são criados automaticamente pelo compilador
 
+- Depois de baixar o typescript é preciso criar o arquivo tsconfig.json
+
 - npm run start roda o compilador e o servidor ao mesmo tempo, através da biblioteca concurrently
