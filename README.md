@@ -15,4 +15,5 @@ npm install typescript@4.2.2
 
 - Depois de baixar o typescript é preciso criar o arquivo tsconfig.json
 
-- npm run start roda o compilador e o servidor ao mesmo tempo, através da biblioteca concurrently
+- Para rodar o servidor junto com o compilador e o servidor ao mesmo tempo, através da biblioteca concurrently
+npm run start
