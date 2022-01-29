@@ -1,15 +1,14 @@
+import { Negociacao } from "../models/negociacao.js";
+
 export class NegociacaoController {
 
     // Criação das variaveis privadas
-    private inputData;
-    private inputQuantidade;
-    private inputValor;
+    private inputData: HTMLInputElement;
+    private inputQuantidade: HTMLInputElement;
+    private inputValor: HTMLInputElement;
 
-
-
-    constructor() {
-        
-        // Recebe os dados do formulário no index.html
+    // Recebe os dados do formulário no index.html
+    constructor() {      
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
@@ -17,8 +16,12 @@ export class NegociacaoController {
 
     // Funcao para adicionar
     adiciona() {
-        console.log(`Data: ${this.inputData}`);
-        console.log(`Quantidade: ${this.inputQuantidade}`);
-        console.log(`Valor: ${this.inputValor}`);
+        const exp = /-/g;
+
+        const date = new Date(this.inputValor.value.replace(exp, ','));
+        const quantidade = parseInt(this.inputQuantidade.value);
+        const valor = parseFloat(this.inputValor.value);
+        const negociacao = new Negociacao(date, quantidade, valor);
+        console.log(negociacao);
     }
 }

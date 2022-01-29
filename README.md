@@ -4,7 +4,7 @@
 npm install
 
 - Roda o servidor local
-npm server
+npm run server
 
 - Instala o compilador do typescript
 npm install typescript@4.2.2
