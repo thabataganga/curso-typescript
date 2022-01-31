@@ -1,3 +1,4 @@
+import { domInjector } from "../decorators/dom-injector.js";
 import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
 import { DiasDaSemana } from "../enums/dias-da-semana.js";
 import { Negociacao } from "../models/negociacao.js";
@@ -8,8 +9,11 @@ import { NegociacoesView } from "../views/negociacoes-view.js";
 export class NegociacaoController {
 
     // Criação das variaveis privadas
+    @domInjector('#data')
     private inputData: HTMLInputElement;
+    @domInjector('#quantidade')
     private inputQuantidade: HTMLInputElement;
+    @domInjector('#valor')
     private inputValor: HTMLInputElement;
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView');
@@ -17,14 +21,11 @@ export class NegociacaoController {
 
     // Recebe os dados do formulário no index.html
     constructor() {
-        this.inputData = <HTMLInputElement>document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade') as HTMLInputElement;
-        this.inputValor = document.querySelector('#valor') as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
         this.limparFormulario();
     }
 
-    @logarTempoDeExecucao()
+    // @logarTempoDeExecucao()
     // Funcao para adicionar
     public adiciona(): void {
         const negociacao = Negociacao.criaDe(
@@ -53,7 +54,7 @@ export class NegociacaoController {
         this.inputData.focus();
     }
 
-    @logarTempoDeExecucao()
+    //  @logarTempoDeExecucao()
     private atualizaView(): void {
         this.negociacoesView.update(this.negociacoes);
         this.mensagemView.update('Negociacao adicionada com sucesso');
