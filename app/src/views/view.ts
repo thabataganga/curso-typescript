@@ -1,14 +1,14 @@
 export abstract class View<T> {
-
     protected elemento: HTMLElement;
     private escapar = false;
 
-    constructor(seletor: string, escapar?: boolean) {
-        const elemento = document.querySelector(seletor);
+    constructor(selector: string, escapar?: boolean) {
+        const elemento = document.querySelector(selector);
+
         if (elemento) {
-            this.elemento = elemento as HTMLElement;
+            this.elemento = elemento as HTMLLIElement;
         } else {
-            throw Error(`Seletor ${seletor} não existe no DOM. Verifique`);
+            throw Error(`Seletor ${selector} não existe no DOM. Verifique`);
         }
         if (escapar) {
             this.escapar = escapar;
