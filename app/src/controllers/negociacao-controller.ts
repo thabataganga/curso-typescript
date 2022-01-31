@@ -1,3 +1,4 @@
+import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
 import { DiasDaSemana } from "../enums/dias-da-semana.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
@@ -23,6 +24,7 @@ export class NegociacaoController {
         this.limparFormulario();
     }
 
+    @logarTempoDeExecucao()
     // Funcao para adicionar
     public adiciona(): void {
         const negociacao = Negociacao.criaDe(
@@ -51,6 +53,7 @@ export class NegociacaoController {
         this.inputData.focus();
     }
 
+    @logarTempoDeExecucao()
     private atualizaView(): void {
         this.negociacoesView.update(this.negociacoes);
         this.mensagemView.update('Negociacao adicionada com sucesso');
