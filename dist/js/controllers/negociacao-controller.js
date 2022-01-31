@@ -4,7 +4,6 @@ import { Negociacoes } from "../models/negociacoes.js";
 import { MensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-views.js";
 export class NegociacaoController {
-    // Recebe os dados do formulário no index.html
     constructor() {
         this.negociacoes = new Negociacoes();
         this.negociacoesView = new NegociacoesView('#negociacoesView', true);
@@ -15,7 +14,6 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
         this.limparFormulario();
     }
-    // Funcao para adicionar
     adiciona() {
         const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
         if (!this.ehDiaUtil(negociacao.data)) {
