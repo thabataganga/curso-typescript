@@ -1,7 +1,6 @@
 /* Código simplório, apenas para fornecer o serviço para a aplicação */
 var api = {}
 
-
 api.dados = function(req, res) {
 
     res.json([
@@ -10,7 +9,7 @@ api.dados = function(req, res) {
         { montante: 50.5, vezes: 1 },
         { montante: 70.5, vezes: 2 }
     ]);
-    
+
 };
 
 
