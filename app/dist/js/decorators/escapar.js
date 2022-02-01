@@ -10,3 +10,4 @@ export function escapar(targer, propertyKey, descriptor) {
     };
     return descriptor;
 }
+//# sourceMappingURL=escapar.js.map

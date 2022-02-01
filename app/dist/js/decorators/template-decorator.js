@@ -8,3 +8,4 @@ export function inspecionar() {
         return descriptor;
     };
 }
+//# sourceMappingURL=template-decorator.js.map

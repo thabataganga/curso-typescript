@@ -9,3 +9,4 @@ export function inspecionar(targer, propertyKey, descriptor) {
     };
     return descriptor;
 }
+//# sourceMappingURL=inspecionar.js.map
