@@ -55,7 +55,8 @@ export class NegociacaoController {
                     return !this.negociacoes
                         .lista()
                         .some(negociacao => negociacoesdeHoje
-                            .ehIgual(negociacoesdeHoje))
+                            .ehIgual(negociacoesdeHoje)
+                        );
                 });
             })
             .then(negociacoesDeHoje => {
